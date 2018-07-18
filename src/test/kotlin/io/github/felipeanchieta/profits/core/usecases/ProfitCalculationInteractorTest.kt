@@ -27,7 +27,7 @@ class ProfitCalculationInteractorTest {
 
     @Before
     fun setUp() {
-        whenever(gateway.retrieveEmployees()).thenReturn(
+        whenever(gateway.retrieveAllEmployees()).thenReturn(
                 listOf(
                         Employee(
                                 id = "231231321",

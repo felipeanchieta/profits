@@ -11,12 +11,12 @@ class RedisPersistence(private val jedis: Jedis) : KeyValuePersistence {
         jedis.set(key, value)
     }
 
-    override fun get(key: String): String? {
-        return jedis.get(key)
+    override fun getAll(): List<String> {
+        return jedis.keys("*").mapNotNull { get(it) }
     }
 
-//    fun getAll(): List<String> {
-//        return jedis.hgetAll()
-//    }
+    private fun get(key: String): String? {
+        return jedis.get(key)
+    }
 
 }

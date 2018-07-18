@@ -9,12 +9,12 @@ class ProfitCalculationInteractor(
 ) {
 
     fun calculateBonus(distributableProfits: Double): List<Double> {
-        gateway.retrieveEmployees()
+        val employees = gateway.retrieveAllEmployees()
         return emptyList()
     }
 
 }
 
 interface ProfitCalculationGateway {
-    fun retrieveEmployees(): List<Employee>
+    fun retrieveAllEmployees(): List<Employee>
 }

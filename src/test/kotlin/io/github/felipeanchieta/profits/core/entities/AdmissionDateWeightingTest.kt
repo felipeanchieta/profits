@@ -4,7 +4,6 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.time.LocalDate
 import java.time.Month
-import java.time.temporal.Temporal
 
 class AdmissionDateWeightingTest : WeightingsTest() {
 
@@ -18,7 +17,7 @@ class AdmissionDateWeightingTest : WeightingsTest() {
         assertEquals(2, AdmissionDateAdapter(LocalDate.of(2017, Month.JULY, 13)).getWeight())
     }
 
-    private class AdmissionDateAdapter(private val admissionDate: Temporal) : Weighable {
+    private class AdmissionDateAdapter(private val admissionDate: LocalDate) : Weighable {
         override fun getWeight() =
                 Employee(id = "whatever",
                         name = "whatever",

@@ -8,6 +8,10 @@ import redis.clients.jedis.Jedis
 class RedisConfig {
 
     @Bean
-    fun jedis() = Jedis("http://jedis.com")
+    fun jedis() = Jedis("redis-11359.c1.us-east1-2.gce.cloud.redislabs.com", 11359).apply {
+        connect()
+        auth("pjOyttp0hlwE8BtTHoSdxaweLhv3Dcjf")
+        flushAll()
+    }
 
 }

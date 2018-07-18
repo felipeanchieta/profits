@@ -2,7 +2,6 @@ package io.github.felipeanchieta.profits.core.entities
 
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
-import java.time.temporal.Temporal
 
 data class Employee(
         val id: String,
@@ -10,7 +9,7 @@ data class Employee(
         val department: Department,
         val position: String,
         val monthlySalary: Double,
-        val admittedAt: Temporal
+        val admittedAt: LocalDate
 ) {
 
     val departmentWeight by lazy {
