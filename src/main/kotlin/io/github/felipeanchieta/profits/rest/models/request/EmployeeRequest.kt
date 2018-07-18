@@ -15,7 +15,7 @@ data class EmployeeRequest(
         @SerializedName("cargo") val position: String,
         @SerializedName("salario_bruto") val monthlySalary: String,
         @SerializedName("data_de_admissao") val admittedAt: String
-) : TranslatableToBusinessEntity<Employee> {
+) : TranslatableToBusinessEntity<Employee>() {
 
     // FIXME: This might not very clever...
     override fun toBusinessEntity() = Employee(

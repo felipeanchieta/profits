@@ -1,10 +1,10 @@
 package io.github.felipeanchieta.profits.core.entities
 
-data class ProfitResult(
+data class ProfitHoldingsResult(
         val holdings: List<Holding>,
-        val holdingsTotal: Double,
         val availableTotal: Double
 ) {
+    val holdingsTotal = holdings.sumByDouble { it.value }
     val totalEmployees = holdings.size
     val totalBalance = availableTotal - holdingsTotal
 }
@@ -12,5 +12,5 @@ data class ProfitResult(
 data class Holding(
         val employeeId: String,
         val employeeName: String,
-        val holding: Double
+        val value: Double
 )

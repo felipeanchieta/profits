@@ -1,5 +1,5 @@
 package io.github.felipeanchieta.profits.rest.models.request
 
-interface TranslatableToBusinessEntity<T> {
-    fun toBusinessEntity(): T
+abstract class TranslatableToBusinessEntity<T> {
+    abstract fun toBusinessEntity(): T
 }

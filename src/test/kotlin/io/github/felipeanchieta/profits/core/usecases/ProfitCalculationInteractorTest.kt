@@ -17,7 +17,7 @@ class ProfitCalculationInteractorTest {
 
     @Test
     fun `should calculate the bonus of a previously persisted employee`() {
-        val results = interactor.calculateBonus(distributableProfits = 10_000.0)
+        val results = interactor.calculateBonus(availableTotal = 10_000.0)
         assertNotEmpty(results)
     }
 
