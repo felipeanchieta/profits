@@ -1,5 +1,7 @@
 # profits
 
+[![Build Status](https://travis-ci.org/felipeanchieta/profits.svg?branch=master)](https://travis-ci.org/felipeanchieta/profits)
+
 This is an application in which you can cache employees and calculate their holding shares (Brazilian "PLR") thereafter.
 
 It is written in or with
