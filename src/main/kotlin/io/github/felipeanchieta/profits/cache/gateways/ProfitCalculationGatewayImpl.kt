@@ -1,4 +1,4 @@
-package io.github.felipeanchieta.profits.persistence.gateways
+package io.github.felipeanchieta.profits.cache.gateways
 
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonDeserializer

@@ -1,6 +1,6 @@
-package io.github.felipeanchieta.profits.persistence.redis
+package io.github.felipeanchieta.profits.cache.redis
 
-import io.github.felipeanchieta.profits.persistence.gateways.KeyValuePersistence
+import io.github.felipeanchieta.profits.cache.gateways.KeyValuePersistence
 import org.springframework.stereotype.Repository
 import redis.clients.jedis.Jedis
 

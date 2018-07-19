@@ -1,4 +1,4 @@
-package io.github.felipeanchieta.profits.persistence.redis
+package io.github.felipeanchieta.profits.cache.redis
 
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.eq

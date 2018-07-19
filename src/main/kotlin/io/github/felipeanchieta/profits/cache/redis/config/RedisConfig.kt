@@ -1,4 +1,4 @@
-package io.github.felipeanchieta.profits.persistence.redis.config
+package io.github.felipeanchieta.profits.cache.redis.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

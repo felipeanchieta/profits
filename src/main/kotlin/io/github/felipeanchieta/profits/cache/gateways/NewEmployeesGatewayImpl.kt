@@ -1,4 +1,4 @@
-package io.github.felipeanchieta.profits.persistence.gateways
+package io.github.felipeanchieta.profits.cache.gateways
 
 import com.google.gson.Gson
 import io.github.felipeanchieta.profits.core.entities.Employee
