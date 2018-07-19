@@ -7,7 +7,12 @@ import com.nhaarman.mockito_kotlin.doNothing
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.whenever
+import io.github.felipeanchieta.profits.core.entities.Department.ACCOUNTING
+import io.github.felipeanchieta.profits.core.entities.Department.CUSTOMER_EXPERIENCE
+import io.github.felipeanchieta.profits.core.entities.Department.FINANCE
 import io.github.felipeanchieta.profits.core.entities.Department.GOVERNANCE
+import io.github.felipeanchieta.profits.core.entities.Department.SERVICES
+import io.github.felipeanchieta.profits.core.entities.Department.TECHNOLOGY
 import io.github.felipeanchieta.profits.core.entities.Employee
 import io.github.felipeanchieta.profits.core.usecases.NewEmployeesInteractor
 import org.intellij.lang.annotations.Language
@@ -50,7 +55,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0004468",
                         name = "Flossie Wilson",
-                        department = GOVERNANCE,
+                        department = ACCOUNTING,
                         position = "Auxiliar de Contabilidade",
                         monthlySalary = 1396.52,
                         admittedAt = LocalDate.of(2015, 1, 5)
@@ -58,7 +63,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0008174",
                         name = "Sherman Hodges",
-                        department = GOVERNANCE,
+                        department = CUSTOMER_EXPERIENCE,
                         position = "Líder de Relacionamento",
                         monthlySalary = 3899.74,
                         admittedAt = LocalDate.of(2015, 6, 7)
@@ -66,7 +71,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0007463",
                         name = "Charlotte Romero",
-                        department = GOVERNANCE,
+                        department = FINANCE,
                         position = "Contador Pleno",
                         monthlySalary = 3199.82,
                         admittedAt = LocalDate.of(2018, 1, 3)
@@ -74,7 +79,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0005253",
                         name = "Wong Austin",
-                        department = GOVERNANCE,
+                        department = FINANCE,
                         position = "Economista Júnior",
                         monthlySalary = 2215.04,
                         admittedAt = LocalDate.of(2016, 8, 27)
@@ -90,7 +95,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0001843",
                         name = "Daugherty Kramer",
-                        department = GOVERNANCE,
+                        department = SERVICES,
                         position = "Atendente de Almoxarifado",
                         monthlySalary = 2120.08,
                         admittedAt = LocalDate.of(2016, 4, 21)
@@ -98,7 +103,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0007961",
                         name = "Francesca Hewitt",
-                        department = GOVERNANCE,
+                        department = ACCOUNTING,
                         position = "Auxiliar de Contabilidade",
                         monthlySalary = 2101.68,
                         admittedAt = LocalDate.of(2015, 6, 21)
@@ -114,7 +119,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0005961",
                         name = "Jillian Odonnell",
-                        department = GOVERNANCE,
+                        department = ACCOUNTING,
                         position = "Contador Júnior",
                         monthlySalary = 2671.26,
                         admittedAt = LocalDate.of(2016, 9, 8)
@@ -122,7 +127,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0007293",
                         name = "Morton Battle",
-                        department = GOVERNANCE,
+                        department = ACCOUNTING,
                         position = "Economista Pleno",
                         monthlySalary = 4457.08,
                         admittedAt = LocalDate.of(2017, 10, 19)
@@ -130,7 +135,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0002105",
                         name = "Dorthy Lee",
-                        department = GOVERNANCE,
+                        department = FINANCE,
                         position = "Estagiário",
                         monthlySalary = 1491.45,
                         admittedAt = LocalDate.of(2015, 3, 16)
@@ -138,7 +143,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0000273",
                         name = "Petersen Coleman",
-                        department = GOVERNANCE,
+                        department = FINANCE,
                         position = "Estagiário",
                         monthlySalary = 1426.13,
                         admittedAt = LocalDate.of(2016, 9, 20)
@@ -146,7 +151,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0007361",
                         name = "Avila Kane",
-                        department = GOVERNANCE,
+                        department = ACCOUNTING,
                         position = "Auxiliar Administrativo",
                         monthlySalary = 2166.25,
                         admittedAt = LocalDate.of(2016, 9, 16)
@@ -154,7 +159,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0004237",
                         name = "Hess Sloan",
-                        department = GOVERNANCE,
+                        department = CUSTOMER_EXPERIENCE,
                         position = "Atendente",
                         monthlySalary = 2266.46,
                         admittedAt = LocalDate.of(2014, 10, 27)
@@ -162,7 +167,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "000538",
                         name = "Ashlee Wood",
-                        department = GOVERNANCE,
+                        department = ACCOUNTING,
                         position = "Auxiliar Administrativo",
                         monthlySalary = 2330.19,
                         admittedAt = LocalDate.of(2014, 7, 15)
@@ -178,7 +183,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0006335",
                         name = "Bealah Long",
-                        department = GOVERNANCE,
+                        department = TECHNOLOGY,
                         position = "Jovem Aprendiz",
                         monthlySalary = 1019.88,
                         admittedAt = LocalDate.of(2014, 8, 27)
@@ -186,7 +191,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0007676",
                         name = "Maricela Martin",
-                        department = GOVERNANCE,
+                        department = SERVICES,
                         position = "Copeiro",
                         monthlySalary = 1591.69,
                         admittedAt = LocalDate.of(2018, 1, 17)
@@ -194,7 +199,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0002949",
                         name = "Stephenson Stone",
-                        department = GOVERNANCE,
+                        department = FINANCE,
                         position = "Analista de Finanças",
                         monthlySalary = 5694.14,
                         admittedAt = LocalDate.of(2014, 1, 26)
@@ -202,7 +207,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0008601",
                         name = "Taylor Mccarthy",
-                        department = GOVERNANCE,
+                        department = CUSTOMER_EXPERIENCE,
                         position = "Auxiliar de Ouvidoria",
                         monthlySalary = 1800.16,
                         admittedAt = LocalDate.of(2017, 3, 31)
@@ -210,7 +215,7 @@ class EmployeesControllerTest : PippoTest() {
                 Employee(
                         id = "0006877",
                         name = "Cross Perkins",
-                        department = GOVERNANCE,
+                        department = CUSTOMER_EXPERIENCE,
                         position = "Líder de Ouvidoria",
                         monthlySalary = 3371.47,
                         admittedAt = LocalDate.of(2016, 12, 6)

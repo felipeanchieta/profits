@@ -1,10 +1,13 @@
 package io.github.felipeanchieta.profits.persistence.redis
 
 import com.nhaarman.mockito_kotlin.any
+import com.nhaarman.mockito_kotlin.eq
 import com.nhaarman.mockito_kotlin.given
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.only
+import com.nhaarman.mockito_kotlin.times
 import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.whenever
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -23,11 +26,13 @@ class RedisViaJedisPersistenceTest {
     }
 
     @Test
-    fun `should get value with a key`() {
-        val value = redisPersistence.get("key")
+    fun `should get everything ever put into the cache`() {
+        whenever(jedis.keys(eq("*"))).thenReturn((1..10).map { it.toString() }.toSet())
 
-        verify(jedis, only()).get("key")
-        assertEquals("something", value)
+        val value = redisPersistence.getAll()
+
+        verify(jedis, times(10)).get(any() as? String?)
+        assertEquals((1..10).map { "something" }, value)
     }
 
     @Before

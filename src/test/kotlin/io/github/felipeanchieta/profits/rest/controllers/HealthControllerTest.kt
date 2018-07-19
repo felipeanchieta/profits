@@ -8,7 +8,6 @@ import ro.pippo.controller.ControllerApplication
 import ro.pippo.test.PippoRule
 import ro.pippo.test.PippoTest
 
-// TODO: Use SpringTest instead of PippoRule
 class HealthControllerTest: PippoTest() {
 
     @get:Rule

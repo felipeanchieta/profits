@@ -15,7 +15,6 @@ class NewEmployeesGatewayImpl(
         persistence.set(employee.id, Gson().toJson(employee.toPersistenceModel()))
     }
 
-    // TODO: Move these out of business layer
     private data class PersistentEmployee(
             val id: String,
             val name: String,
