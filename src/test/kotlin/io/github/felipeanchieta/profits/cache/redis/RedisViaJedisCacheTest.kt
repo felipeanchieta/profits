@@ -13,14 +13,14 @@ import org.junit.Before
 import org.junit.Test
 import redis.clients.jedis.Jedis
 
-class RedisViaJedisPersistenceTest {
+class RedisViaJedisCacheTest {
 
     private val jedis: Jedis = mock()
-    private val redisPersistence = RedisPersistence(jedis)
+    private val redisCache = RedisCache(jedis)
 
     @Test
     fun `should put a key-value`() {
-        redisPersistence.set("key", "value")
+        redisCache.set("key", "value")
 
         verify(jedis, only()).set("key", "value")
     }
@@ -29,7 +29,7 @@ class RedisViaJedisPersistenceTest {
     fun `should get everything ever put into the cache`() {
         whenever(jedis.keys(eq("*"))).thenReturn((1..10).map { it.toString() }.toSet())
 
-        val value = redisPersistence.getAll()
+        val value = redisCache.getAll()
 
         verify(jedis, times(10)).get(any() as? String?)
         assertEquals((1..10).map { "something" }, value)

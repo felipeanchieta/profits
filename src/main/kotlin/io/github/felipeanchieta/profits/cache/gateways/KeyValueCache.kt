@@ -1,6 +1,6 @@
 package io.github.felipeanchieta.profits.cache.gateways
 
-interface KeyValuePersistence {
+interface KeyValueCache {
 
     fun set(key: String, value: String)
 

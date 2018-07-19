@@ -8,11 +8,11 @@ import java.time.format.DateTimeFormatter
 
 @Repository
 class NewEmployeesGatewayImpl(
-        private val persistence: KeyValuePersistence
+        private val cache: KeyValueCache
 ) : NewEmployeesGateway {
 
     override fun save(employee: Employee) {
-        persistence.set(employee.id, Gson().toJson(employee.toPersistenceModel()))
+        cache.set(employee.id, Gson().toJson(employee.toCacheModel()))
     }
 
     private data class PersistentEmployee(
@@ -24,7 +24,7 @@ class NewEmployeesGatewayImpl(
             val admittedAt: String
     )
 
-    private fun Employee.toPersistenceModel() = PersistentEmployee(
+    private fun Employee.toCacheModel() = PersistentEmployee(
             id = this.id,
             name = this.name,
             department = this.department.toString(),

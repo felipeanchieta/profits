@@ -9,7 +9,7 @@ import java.time.LocalDate
 
 @Repository
 class ProfitCalculationGatewayImpl(
-        private val persistence: KeyValuePersistence
+        private val cache: KeyValueCache
 ) : ProfitCalculationGateway {
 
     private val gson = GsonBuilder().registerTypeAdapter(
@@ -18,7 +18,7 @@ class ProfitCalculationGatewayImpl(
     ).create()!!
 
     override fun retrieveAllEmployees(): List<Employee> {
-        val employees = persistence.getAll()
+        val employees = cache.getAll()
         return employees.map { gson.fromJson(it, Employee::class.java) }
     }
 
