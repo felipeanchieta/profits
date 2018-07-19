@@ -1,8 +1,12 @@
 # profits
 
-This is an application in which you can cache employees and calculate their holding shares (PRL) thereafter.
+This is an application in which you can cache employees and calculate their holding shares (Brazilian "PLR") thereafter.
 
-It is written in Kotlin/JVM, Spring for dependency inversion, Pippo/Jetty as webserver toolkit, and Redis/Cloud.
+It is written in or with
+- Kotlin/JVM
+- Spring for dependency inversion
+- Pippo/Jetty as webserver toolkit
+- Redis/Cloud for caching
 
 ## how to run?
 
@@ -20,4 +24,4 @@ It is written in Kotlin/JVM, Spring for dependency inversion, Pippo/Jetty as web
 
 here: `src/test/resources/requests.http`
 
-you may easily use your favorite REST interface in order to run these examples
+you may easily use your favorite REST interface in order to run these examples, e.g.: Postman, Insomnia, IntelliJ plugin etc.
